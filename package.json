@@ -1,0 +1,30 @@
+{
+  "name": "microservice-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js --ignore __tests__",
+    "pretest": "set NODE_ENV=test&& sequelize db:migrate",
+    "test": "set NODE_ENV=test&& jest --runInBand --detectOpenHandles --forceExit",
+    "posttest": "set NODE_ENV=test&& sequelize db:migrate:undo:all"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "factory-girl": "^5.0.4",
+    "faker": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "sequelize-cli": "^6.2.0",
+    "sqlite3": "^5.0.2",
+    "supertest": "^6.1.3"
+  }
+}
